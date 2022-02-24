@@ -7,5 +7,4 @@ python:
     - method: pip
       extra_requirements:
         - readthedocs
-        - sphinx-book-theme
       path: .
