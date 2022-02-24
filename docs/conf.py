@@ -9,7 +9,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.autosectionlabel",
-    "sphinx-book-theme"
+    "sphinx_book_theme"
 ]
 
 language = "en"
