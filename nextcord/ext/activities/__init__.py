@@ -3,6 +3,7 @@ from enums import Activity
 
 __all__ = ("Activity")
 
+
 async def create_activity_invite_link(self, activity: Activity) -> str:
     """
     Creates an invite link for the specified activity.
@@ -11,18 +12,21 @@ async def create_activity_invite_link(self, activity: Activity) -> str:
     -----------
     activity
         The activity to create an invite link for.
-    
+
     Returns
     --------
         The invite link to launch the specific activity.
-    
+
     Return type
     ------------
         :class:`str`
     """
 
     async def _create_normal_invite_link(activity_id: int):
-        return self.create_invite(target_type=nextcord.InviteTarget.embedded_application, target_application_id=activity_id)
+        return self.create_invite(
+            target_type=nextcord.InviteTarget.embedded_application,
+            target_application_id=activity_id
+        )
 
     if activity == Activity.poker:
         return await _create_normal_invite_link(755827207812677713)

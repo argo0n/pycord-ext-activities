@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class Activity(Enum):
     poker = 1
     betrayal = 2
@@ -13,6 +14,3 @@ class Activity(Enum):
     word_snacks = 10
     sketch = 11
     spellcast = 12
-
-
-
