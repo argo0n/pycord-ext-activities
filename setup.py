@@ -7,9 +7,6 @@ classifiers = [
   'License :: OSI Approved :: MIT License',
   'Programming Language :: Python :: 3'
 ]
-extras = {
-    "readthedocs": "sphinx-book-theme"
-}
 setup(
     name='nextcord-ext-activities',
     version='2022.02.24',

@@ -5,6 +5,5 @@ python:
   version: 3.8
   install:
     - method: pip
-      extra_requirements:
-        - readthedocs
       path: .
+    - requirements: docs/requirements.txt
