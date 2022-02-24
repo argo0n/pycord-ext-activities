@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
- 
+
 classifiers = [
   'Development Status :: 1 - Planning',
   'Intended Audience :: Education',
@@ -7,19 +7,21 @@ classifiers = [
   'License :: OSI Approved :: MIT License',
   'Programming Language :: Python :: 3'
 ]
- 
+extras = {
+    "readthedocs": "sphinx-book-theme"
+}
 setup(
     name='nextcord-ext-activities',
     version='2022.02.24',
-    description='An nextcord extension that helps you to launch activities on Discord.',
+    description='An nextcord extension that helps you to launch activities on Discord.',  # noqa: E501
     long_description=open('README.md').read(),
-    url='',  
+    url='',
     author='MaskDuck',
     author_email='i-am@maskduck.ninja',
-    license='MIT', 
+    license='MIT',
     classifiers=classifiers,
-    keywords='activities', 
+    keywords='activities',
     packages=find_packages(),
     long_description_content_type='text/markdown',
-    install_requires=['nextcord'] 
+    install_requires=['nextcord']
 )

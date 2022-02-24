@@ -1,6 +1,3 @@
-import os
-import sys
-
 project = "nextcord.ext.activities"
 copyright = "2022, MaskDuck"
 author = "MaskDuck"
