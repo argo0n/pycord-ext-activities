@@ -2,6 +2,7 @@ import nextcord
 from enums import Activity
 
 __all__ = ("Activity")
+__version__ = "2022.02.25.post1"
 
 
 async def create_activity_invite_link(self, activity: Activity) -> str:
