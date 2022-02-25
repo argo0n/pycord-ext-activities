@@ -66,7 +66,7 @@ async def create_activity_invite_link(self, activity: Activity, activity_id: int
     elif activity == Activity.awkword:
         return await _create_normal_invite_link(879863881349087252)
     elif activity == Activity.custom:
-        if activity_id is not None:
+        if activity_id is None:
             raise ValueError('if activity is Activity.custom then activity_id must be passed')  # noqa: E501
             return
         return await _create_normal_invite_link(activity_id)
