@@ -7,6 +7,9 @@ classifiers = [
   'License :: OSI Approved :: MIT License',
   'Programming Language :: Python :: 3'
 ]
+packages = [
+    "discord.ext.ipc",
+]
 setup(
     name='nextcord-ext-activities',
     version='2022.02.24',
@@ -18,7 +21,7 @@ setup(
     license='MIT',
     classifiers=classifiers,
     keywords='activities',
-    packages=find_packages(),
+    packages=packages,
     long_description_content_type='text/markdown',
     install_requires=['nextcord']
 )
