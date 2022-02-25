@@ -14,3 +14,4 @@ class Activity(Enum):
     word_snacks = 10
     sketch = 11
     spellcast = 12  # boost-locked
+    letter_league = 13  # boost-locked

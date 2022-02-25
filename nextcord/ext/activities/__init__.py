@@ -1,6 +1,8 @@
 import nextcord
 from .enums import Activity
 
+import warnings
+
 __all__ = ("Activity")
 __version__ = "2022.02.25.post3"
 
@@ -44,8 +46,12 @@ async def create_activity_invite_link(self, activity: Activity) -> str:
     elif activity == Activity.youtube:
         return await _create_normal_invite_link(880218394199220334)
     elif activity == Activity.doodle:
+        warnings.warn("Doodle Crew is an old activity, and will be removed in a future release.", DeprecationWarning)
         return await _create_normal_invite_link(878067389634314250)
     elif activity == Activity.letter_tile:
+        warnings.warn("letter_tile name is now deprecated, use letter_league instead.", DeprecationWarning)
+        return await _create_normal_invite_link(879863686565621790)
+    elif activity == Activity.letter_league:
         return await _create_normal_invite_link(879863686565621790)
     elif activity == Activity.word_snacks:
         return await _create_normal_invite_link(879863976006127627)
