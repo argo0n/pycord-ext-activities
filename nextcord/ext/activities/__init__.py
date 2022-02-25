@@ -46,10 +46,10 @@ async def create_activity_invite_link(self, activity: Activity) -> str:
     elif activity == Activity.youtube:
         return await _create_normal_invite_link(880218394199220334)
     elif activity == Activity.doodle:
-        warnings.warn("Doodle Crew is an old activity, and will be removed in a future release.", DeprecationWarning)
+        warnings.warn("Doodle Crew is an old activity, and will be removed in a future release.", DeprecationWarning)  # noqa: E501
         return await _create_normal_invite_link(878067389634314250)
     elif activity == Activity.letter_tile:
-        warnings.warn("letter_tile name is now deprecated, use letter_league instead.", DeprecationWarning)
+        warnings.warn("letter_tile name is now deprecated, use letter_league instead.", DeprecationWarning)  # noqa: E501
         return await _create_normal_invite_link(879863686565621790)
     elif activity == Activity.letter_league:
         return await _create_normal_invite_link(879863686565621790)
@@ -59,5 +59,7 @@ async def create_activity_invite_link(self, activity: Activity) -> str:
         return await _create_normal_invite_link(902271654783242291)
     elif activity == Activity.spellcast:
         return await _create_normal_invite_link(852509694341283871)
+    elif activity == Activity.awkword:
+        return await _create_normal_invite_link(879863881349087252)
 
 nextcord.VoiceChannel.create_activity_invite = create_activity_invite_link
