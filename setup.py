@@ -12,7 +12,7 @@ packages = [
 ]
 setup(
     name='nextcord-ext-activities',
-    version='2022.02.25.post1',
+    version='2022.02.25.post3',
     description='An nextcord extension that helps you to launch activities on Discord.',  # noqa: E501
     long_description=open('README.md').read(),
     url='',
