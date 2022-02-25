@@ -7,7 +7,7 @@ __all__ = ("Activity")
 __version__ = "2022.02.25.post3"
 
 
-async def create_activity_invite_link(self, activity: Activity, activity_id: int = None) -> str:
+async def create_activity_invite_link(self, activity: Activity, activity_id: int = None) -> str:  # noqa: E501
     """
     Creates an invite link for the specified activity.
 
@@ -67,7 +67,7 @@ async def create_activity_invite_link(self, activity: Activity, activity_id: int
         return await _create_normal_invite_link(879863881349087252)
     elif activity == Activity.custom:
         if activity_id is not None:
-            raise ValueError('if activity is Activity.custom then activity_id must be passed')
+            raise ValueError('if activity is Activity.custom then activity_id must be passed')  # noqa: E501
             return
         return await _create_normal_invite_link(activity_id)
 
