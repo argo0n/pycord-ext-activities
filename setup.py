@@ -8,16 +8,15 @@ classifiers = [
   'Programming Language :: Python :: 3'
 ]
 packages = [
-    "discord.ext.ipc",
+    "nextcord.ext.activities",
 ]
 setup(
     name='nextcord-ext-activities',
-    version='2022.02.24',
+    version='2022.02.25.post1',
     description='An nextcord extension that helps you to launch activities on Discord.',  # noqa: E501
     long_description=open('README.md').read(),
     url='',
     author='MaskDuck',
-    author_email='i-am@maskduck.ninja',
     license='MIT',
     classifiers=classifiers,
     keywords='activities',
