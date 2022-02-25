@@ -22,4 +22,5 @@ async def betrayal(ctx, channel: nextcord.VoiceChannel):
     invite_link = await channel.create_activity_invite(activities.Activity.betrayal)  # noqa: E501
     await ctx.send(invite_link)
 
+
 bot.run('token here')
