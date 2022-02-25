@@ -7,7 +7,7 @@ __all__ = ("Activity")
 __version__ = "2022.02.25.post3"
 
 
-async def create_activity_invite_link(self, activity: Activity) -> str:
+async def create_activity_invite_link(self, activity: Activity, activity_id: int = None) -> str:
     """
     Creates an invite link for the specified activity.
 
@@ -15,6 +15,10 @@ async def create_activity_invite_link(self, activity: Activity) -> str:
     -----------
     activity
         The activity to create an invite link for.
+        If the value is ``Activity.custom`` and you don't pass the ``activity_id`` parameter, this will lead to an exception.
+    activity_id
+        The ID of the activity to create an invite link for, if ``activity`` parameter is ``Activity.custom``.
+        If ``activity`` is not ``Activity.custom``, this parameter is ignored.
 
     Returns
     --------
@@ -61,5 +65,11 @@ async def create_activity_invite_link(self, activity: Activity) -> str:
         return await _create_normal_invite_link(852509694341283871)
     elif activity == Activity.awkword:
         return await _create_normal_invite_link(879863881349087252)
+    elif activity == Activity.custom:
+        if activity_id is not None:
+            raise ValueError('if activity is Activity.custom then activity_id must be passed')
+            return
+        return await _create_normal_invite_link(activity_id)
+
 
 nextcord.VoiceChannel.create_activity_invite = create_activity_invite_link

@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class Activity(Enum):
+    custom = 0  # you can insert custom ID here
     poker = 1  # boost-locked
     betrayal = 2
     fishington = 3
@@ -15,4 +16,4 @@ class Activity(Enum):
     sketch = 11
     spellcast = 12  # boost-locked
     letter_league = 13  # boost-locked
-    awkword = 14
+    awkword = 14  # boost-locked
