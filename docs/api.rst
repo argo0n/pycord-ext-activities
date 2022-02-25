@@ -2,6 +2,6 @@
 
 API Reference
 ==============
-.. automodule:: activities
+.. automodule:: nextcord.ext.activiies
     :members:
     :noindex:

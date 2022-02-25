@@ -5,5 +5,5 @@ python:
   version: 3.8
   install:
     - method: pip
-      path: nextcord/ext/activities
+      path: .
     - requirements: docs/requirements.txt
