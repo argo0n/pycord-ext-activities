@@ -4,8 +4,7 @@ nextcord.ext.activities is an extension that helps you to launch activities on D
 # Quick example
 ```py
 import nextcord
-from nextcord.ext import commands
-from nextcord.ext import activities
+from nextcord.ext import commands, activities
 
 intents = nextcord.Intents.default()
 bot = commands.Bot(command_prefix = "$")
@@ -26,3 +25,4 @@ async def betrayal(ctx, channel: nextcord.VoiceChannel):
 
 bot.run('token here')
 ```
+You can find more example in the [example directory]()
