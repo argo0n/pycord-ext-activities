@@ -4,7 +4,7 @@ from .enums import Activity
 import warnings
 
 __all__ = ("Activity")
-__version__ = "2022.02.25.post3"
+__version__ = "2022.02.26"
 
 
 async def create_activity_invite_link(self, activity: Activity, activity_id: int = None) -> str:  # noqa: E501
