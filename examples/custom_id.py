@@ -1,3 +1,4 @@
+# kinda useless since nextcord allow you to directly pass the id, but heck yeah.
 import nextcord
 from nextcord.ext import commands, activities
 
