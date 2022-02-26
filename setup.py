@@ -1,7 +1,7 @@
 from setuptools import setup
 
 classifiers = [
-  'Development Status :: 1 - Planning',
+  'Development Status :: 2 - Pre-Alpha',
   'Intended Audience :: Developers',
   'Operating System :: Microsoft :: Windows :: Windows 10',
   'License :: OSI Approved :: MIT License',
