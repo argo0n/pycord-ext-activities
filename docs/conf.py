@@ -1,8 +1,8 @@
 project = "nextcord.ext.activities"
 copyright = "2022, MaskDuck"
 author = "MaskDuck"
-release = "2022.02.24"
-version = "2022.02.24"
+release = "2022.02.26"
+version = "2022.02.26"
 
 autosectionlabel_prefix_document = True
 extensions = [
