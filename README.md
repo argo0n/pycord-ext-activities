@@ -25,4 +25,4 @@ async def betrayal(ctx, channel: nextcord.VoiceChannel):
 
 bot.run('token here')
 ```
-You can find more example in the [example directory]()
+You can find more example in the [example directory](https://github.com/MaskDuck/nextcord-ext-activities/tree/main/examples)
