@@ -5,6 +5,8 @@ import warnings
 
 __all__ = ("Activity")
 __version__ = "2022.02.26"
+__author__ = "MaskDuck"
+__license__ = "GNU General Public License Version 3.0"
 
 
 async def create_activity_invite_link(self, activity: Activity, activity_id: int = None) -> str:  # noqa: E501
