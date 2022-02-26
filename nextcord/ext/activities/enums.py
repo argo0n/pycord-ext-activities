@@ -2,7 +2,7 @@ from enum import Enum
 
 
 class Activity(Enum):
-    custom = 0  # you can insert custom ID here
+    custom = 0  # you can insert activity_id parameter while setting this as activities
     poker = 1  # boost-locked
     betrayal = 2
     fishington = 3
