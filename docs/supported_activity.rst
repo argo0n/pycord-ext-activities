@@ -1,8 +1,8 @@
 List of supported activities
 =============================
-|-------------------------------------------------------------------------|
++---------------------------+---------------------------------------------+
 | Activity type             | Its name in the official Discord Client     |
-|---------------------------+---------------------------------------------|
++===========================+=============================================+
 | ``Activity.custom``       | Custom Activity, you can pass an ID for it  |
 | ``Activity.poker``        | Poker Night                                 |
 | ``Activity.betrayal``     | Betrayal.io                                 |
@@ -18,4 +18,4 @@ List of supported activities
 | ``Activity.spellcast``    | Spellcast                                   |
 | ``Activity.letter_league``| Letter League                               |
 | ``Activity.awkword``      | Awkword                                     |
-|-------------------------------------------------------------------------|
++---------------------------+---------------------------------------------|
