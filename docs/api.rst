@@ -5,9 +5,10 @@ activities.__version__
 =======================
 Return the version of the wrapper.
 
-*async* nextcord.VoiceChannel.create_activity_invite(activity, activity_id=None)
+nextcord.VoiceChannel.create_activity_invite(activity, activity_id=None)
 ================================================================================
 *this function is a coroutine.*
+
 Creates an invite link for the specified activity.
 
 Parameters
