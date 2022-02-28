@@ -1,5 +1,5 @@
 # nextcord-ext-activities
-| [PyPi](https://pypi.org/project/nextcord-ext-activities/) | [Docs](https://nextcord-ext-activities.readthedocs.io) | [Support server](https://discord.gg/eKJchSjwmV) | [GitHub repo](https://github.com/MaskDuck/nextcord-ext-activities) |<br>
+| [PyPi](https://pypi.org/project/nextcord-ext-activities/) | [Docs](https://nextcord-ext-activities.readthedocs.io) | [Support server](https://discord.gg/T7q5maTjyF) | [GitHub repo](https://github.com/MaskDuck/nextcord-ext-activities) |<br>
 nextcord.ext.activities is an extension that helps you to launch activities on Discord. <br>
 
 # Quick example
