@@ -2,7 +2,7 @@ import nextcord
 from nextcord.ext import commands, activities
 
 intents = nextcord.Intents.default()
-bot = commands.Bot(command_prefix="$")
+bot = commands.Bot(command_prefix="$", intents=intents)
 
 
 @bot.event
