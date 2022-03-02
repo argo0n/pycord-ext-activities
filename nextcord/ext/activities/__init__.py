@@ -36,6 +36,23 @@ async def create_activity_invite_link(self, activity: Activity, activity_id: int
             target_type=nextcord.InviteTarget.embedded_application,
             target_application_id=activity_id
         )
+    
+    {
+        Activity.poker: 755827207812677713,
+        Activity.betrayal: 773336526917861400,
+        Activity.fishington: 814288819477020702,
+        Activity.checker: 832013003968348200,
+        Activity.chess: 832012774040141894,
+        Activity.ocho: 832025144389533716,
+        Activity.youtube: 880218394199220334,
+        Activity.doodle: 878067389634314250,
+        Activity.letter_tile: 879863686565621790,
+        Activity.letter_league: 879863686565621790,
+        Activity.word_snacks: 879863976006127627,
+        Activity.sketch: 902271654783242291,
+        Activity.spellcast: 852509694341283871,
+        Activity.awkword: 879863881349087252
+    }
 
     if activity == Activity.poker:
         return await _create_normal_invite_link(755827207812677713)
