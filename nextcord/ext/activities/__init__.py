@@ -2,7 +2,7 @@ import nextcord
 from .enums import Activity
 
 import warnings
-from typing import TypeGuard, Union
+from typing import Union
 
 __all__ = ("Activity")
 __version__ = "1.0.0a1"
