@@ -37,7 +37,8 @@ async def create_activity_invite_link(self, activity: Activity, activity_id: int
             target_application_id=activity_id
         )
     
-    {
+    activity_type_to_activity = {
+        Activity.custom: activity_id,
         Activity.poker: 755827207812677713,
         Activity.betrayal: 773336526917861400,
         Activity.fishington: 814288819477020702,
@@ -54,6 +55,8 @@ async def create_activity_invite_link(self, activity: Activity, activity_id: int
         Activity.awkword: 879863881349087252
     }
 
+    return await _create_normal_invite_link(activity_type_to_activity.get(activity))
+    """
     if activity == Activity.poker:
         return await _create_normal_invite_link(755827207812677713)
     elif activity == Activity.betrayal:
@@ -89,6 +92,7 @@ async def create_activity_invite_link(self, activity: Activity, activity_id: int
             raise ValueError('if activity is Activity.custom then activity_id must be passed')  # noqa: E501
             return
         return await _create_normal_invite_link(activity_id)
+    """
 
 
 nextcord.VoiceChannel.create_activity_invite = create_activity_invite_link
