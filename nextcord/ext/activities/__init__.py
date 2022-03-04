@@ -10,7 +10,7 @@ __author__ = "MaskDuck"
 __license__ = "GNU General Public License Version 3.0"
 
 
-async def create_activity_invite_link(self, activity: Activity, activity_id: int = None) -> TypeGuard[Union[str, None]]:  # noqa: E501
+async def create_activity_invite_link(self, activity: Activity, activity_id: int = None) -> str:  # noqa: E501
     """
     Creates an invite link for the specified activity.
 
