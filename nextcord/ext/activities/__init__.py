@@ -57,6 +57,7 @@ async def create_activity_invite_link(self, activity: Activity, activity_id: int
     }
 
     return await _create_normal_invite_link(activity_type_to_activity.get(activity))
+    # older snippets, v2022.02.26
     """
     if activity == Activity.poker:
         return await _create_normal_invite_link(755827207812677713)
