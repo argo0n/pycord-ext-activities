@@ -5,7 +5,7 @@ import warnings
 from typing import Union
 
 __all__ = ("Activity")
-__version__ = "1.0.0a1"
+__version__ = "2022.03.14"
 __author__ = "MaskDuck"
 __license__ = "GNU General Public License Version 3.0"
 
