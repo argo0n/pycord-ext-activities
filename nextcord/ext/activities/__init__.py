@@ -45,6 +45,7 @@ async def create_activity_invite_link(self, activity: Activity, activity_id: int
         Activity.checker: 832013003968348200,
         Activity.chess: 832012774040141894,
         Activity.ocho: 832025144389533716,
+        Activity.blazing: 832025144389533716,
         Activity.youtube: 880218394199220334,
         Activity.doodle: 878067389634314250,
         Activity.letter_tile: 879863686565621790,
