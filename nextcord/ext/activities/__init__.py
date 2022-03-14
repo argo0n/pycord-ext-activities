@@ -1,8 +1,7 @@
 import nextcord
 from .enums import Activity
 
-import warnings
-from typing import Union
+
 
 __all__ = ("Activity")
 __version__ = "2022.03.14"
