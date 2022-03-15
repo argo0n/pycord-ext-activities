@@ -1,8 +1,7 @@
 import nextcord
 from nextcord.ext import commands, activities
 
-intents = nextcord.Intents.default()
-bot = commands.Bot(command_prefix="$", intents=intents)
+bot = commands.Bot(command_prefix="$")
 
 
 @bot.event
@@ -22,4 +21,4 @@ async def betrayal(ctx, channel: nextcord.VoiceChannel):
     await ctx.send(invite_link)
 
 
-bot.run('token here')
+bot.run("token here")

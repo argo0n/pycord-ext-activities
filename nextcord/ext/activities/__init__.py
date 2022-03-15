@@ -1,100 +1,66 @@
-import nextcord
+from typing import TYPE_CHECKING, Optional
 from .enums import Activity
 
+# probably needed to monkey patch a function
+import discord
+from discord import InviteTarget, Invite
 
 
-__all__ = ("Activity")
-__version__ = "2022.03.14"
+__version__ = "2022.03.15"
 __author__ = "MaskDuck"
 __license__ = "GNU General Public License Version 3.0"
 
 
-async def create_activity_invite_link(self, activity: Activity, activity_id: int = None) -> str:  # noqa: E501
+async def create_activity_invite_link(
+    self: discord.VoiceChannel,
+    activity: Activity,
+    /,
+    *,
+    activity_id: Optional[int] = None,
+    reason: Optional[str] = None,
+    max_age: int = 0,
+    max_uses: int = 0,
+    temporary: bool = False,
+    unique: bool = True,
+) -> Invite:
     """
     Creates an invite link for the specified activity.
 
     Parameters
     -----------
-    activity
+    activity: :class:`.Activity`
         The activity to create an invite link for.
         If the value is ``Activity.custom`` and you don't pass the ``activity_id`` parameter, this will lead to an exception.
-    activity_id
-        The ID of the activity to create an invite link for, if ``activity`` parameter is ``Activity.custom``.
-        If ``activity`` is not ``Activity.custom``, this parameter is ignored.
+    activity_id: Optional[:class:`int`]
+        The ID of the activity to create an invite link for, if ``activity`` parameter is of type ``Activity.custom`` it's ignored otherwise.
 
     Returns
     --------
-        The invite link to launch the specific activity.
-
-    Return type
-    ------------
-        :class:`str`
+    :class:`discord.Invite`
+        The invite that was created to launch the specific activity.
     """
-
-    async def _create_normal_invite_link(activity_id: int):
-        return await self.create_invite(
-            target_type=nextcord.InviteTarget.embedded_application,
-            target_application_id=activity_id
-        )
-    
-    activity_type_to_activity = {
-        Activity.custom: activity_id,
-        Activity.poker: 755827207812677713,
-        Activity.betrayal: 773336526917861400,
-        Activity.fishington: 814288819477020702,
-        Activity.checker: 832013003968348200,
-        Activity.chess: 832012774040141894,
-        Activity.ocho: 832025144389533716,
-        Activity.blazing: 832025144389533716,
-        Activity.youtube: 880218394199220334,
-        Activity.doodle: 878067389634314250,
-        Activity.letter_tile: 879863686565621790,
-        Activity.letter_league: 879863686565621790,
-        Activity.word_snacks: 879863976006127627,
-        Activity.sketch: 902271654783242291,
-        Activity.spellcast: 852509694341283871,
-        Activity.awkword: 879863881349087252
-    }
-
-    return await _create_normal_invite_link(activity_type_to_activity.get(activity))
-    # older snippets, v2022.02.26
-    """
-    if activity == Activity.poker:
-        return await _create_normal_invite_link(755827207812677713)
-    elif activity == Activity.betrayal:
-        return await _create_normal_invite_link(773336526917861400)
-    elif activity == Activity.fishington:
-        return await _create_normal_invite_link(814288819477020702)
-    elif activity == Activity.chess:
-        return await _create_normal_invite_link(832012774040141894)
-    elif activity == Activity.checker:
-        return await _create_normal_invite_link(832013003968348200)
-    elif activity == Activity.ocho:
-        return await _create_normal_invite_link(832025144389533716)
-    elif activity == Activity.youtube:
-        return await _create_normal_invite_link(880218394199220334)
-    elif activity == Activity.doodle:
-        warnings.warn("Doodle Crew is an old activity, and will be removed in a future release.", DeprecationWarning)  # noqa: E501
-        return await _create_normal_invite_link(878067389634314250)
-    elif activity == Activity.letter_tile:
-        warnings.warn("letter_tile name is now deprecated, use letter_league instead.", DeprecationWarning)  # noqa: E501
-        return await _create_normal_invite_link(879863686565621790)
-    elif activity == Activity.letter_league:
-        return await _create_normal_invite_link(879863686565621790)
-    elif activity == Activity.word_snacks:
-        return await _create_normal_invite_link(879863976006127627)
-    elif activity == Activity.sketch:
-        return await _create_normal_invite_link(902271654783242291)
-    elif activity == Activity.spellcast:
-        return await _create_normal_invite_link(852509694341283871)
-    elif activity == Activity.awkword:
-        return await _create_normal_invite_link(879863881349087252)
-    elif activity == Activity.custom:
+    if activity is Activity.custom:
         if activity_id is None:
-            raise ValueError('if activity is Activity.custom then activity_id must be passed')  # noqa: E501
-            return
-        return await _create_normal_invite_link(activity_id)
-    """
+            raise ValueError("activity_id is required for Activity.custom")
+
+        activity_id = int(activity_id)
+    else:
+        if activity.is_boost_locked and self.guild.premium_tier < 1:
+            raise ValueError("This activtity is boost-locked. Boost-locked activities are only available for guilds with a premium tier of 1 or higher")
+            
+        activity_id = int(activity)
+
+    res = await self.create_invite(
+        reason=reason,
+        max_age=max_age,
+        max_uses=max_uses,
+        temporary=temporary,
+        unique=unique,
+        target_type=InviteTarget.embedded_application,
+        target_application_id=activity_id,
+    )
+
+    return res
 
 
-nextcord.VoiceChannel.create_activity_invite = create_activity_invite_link
+discord.VoiceChannel.create_activity_invite = create_activity_invite_link  # type: ignore
