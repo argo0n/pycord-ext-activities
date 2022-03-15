@@ -1,9 +1,9 @@
-from typing import TYPE_CHECKING, Optional
+from typing import Optional
 from .enums import Activity
 
 # probably needed to monkey patch a function
-import discord
-from discord import InviteTarget, Invite
+import nextcord
+from nextcord import InviteTarget, Invite
 
 
 __version__ = "2022.03.15"
@@ -12,7 +12,7 @@ __license__ = "GNU General Public License Version 3.0"
 
 
 async def create_activity_invite_link(
-    self: discord.VoiceChannel,
+    self: nextcord.VoiceChannel,
     activity: Activity,
     /,
     *,
@@ -36,7 +36,7 @@ async def create_activity_invite_link(
 
     Returns
     --------
-    :class:`discord.Invite`
+    :class:`nextcord.Invite`
         The invite that was created to launch the specific activity.
     """
     if activity is Activity.custom:
@@ -47,7 +47,7 @@ async def create_activity_invite_link(
     else:
         if activity.is_boost_locked and self.guild.premium_tier < 1:
             raise ValueError("This activtity is boost-locked. Boost-locked activities are only available for guilds with a premium tier of 1 or higher")
-            
+
         activity_id = int(activity)
 
     res = await self.create_invite(
@@ -63,4 +63,4 @@ async def create_activity_invite_link(
     return res
 
 
-discord.VoiceChannel.create_activity_invite = create_activity_invite_link  # type: ignore
+nextcord.VoiceChannel.create_activity_invite = create_activity_invite_link  # type: ignore
