@@ -1,9 +1,7 @@
-from typing import Optional
-from .enums import Activity
+from typing import Optional, Union
+from .enums import Activity, ActivityDevelopment
 
-# probably needed to monkey patch a function
-import nextcord
-from nextcord import InviteTarget, Invite
+from nextcord import InviteTarget, Invite, VoiceChannel
 
 
 __version__ = "2022.03.15"
@@ -12,8 +10,8 @@ __license__ = "GNU General Public License Version 3.0"
 
 
 async def create_activity_invite_link(
-    self: nextcord.VoiceChannel,
-    activity: Activity,
+    self: VoiceChannel,
+    activity: Union[Activity, ActivityDevelopment],
     /,
     *,
     activity_id: Optional[int] = None,
@@ -28,7 +26,7 @@ async def create_activity_invite_link(
 
     Parameters
     -----------
-    activity: :class:`.Activity`
+    activity: Union[:class:`.Activity`, :class:`.ActivityDevelopment`]
         The activity to create an invite link for.
         If the value is ``Activity.custom`` and you don't pass the ``activity_id`` parameter, this will lead to an exception.
     activity_id: Optional[:class:`int`]
@@ -46,7 +44,9 @@ async def create_activity_invite_link(
         activity_id = int(activity_id)
     else:
         if activity.is_boost_locked and self.guild.premium_tier < 1:
-            raise ValueError("This activtity is boost-locked. Boost-locked activities are only available for guilds with a premium tier of 1 or higher")
+            raise ValueError(
+                "This activtity is boost-locked. Boost-locked activities are only available for guilds with a premium tier of 1 or higher"
+            )
 
         activity_id = int(activity)
 
@@ -63,4 +63,4 @@ async def create_activity_invite_link(
     return res
 
 
-nextcord.VoiceChannel.create_activity_invite = create_activity_invite_link  # type: ignore
+VoiceChannel.create_activity_invite = create_activity_invite_link  # type: ignore
