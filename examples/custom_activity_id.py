@@ -1,6 +1,6 @@
 # kinda useless since nextcord allow you to directly pass the id, but heck yeah.
 import nextcord
-from nextcord.ext import commands, activities
+from nextcord.ext import activities, commands
 
 bot = commands.Bot(command_prefix="$")
 
