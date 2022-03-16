@@ -9,4 +9,3 @@ Methods
 
 .. autofunction:: create_activity_invite
 
-
