@@ -18,13 +18,13 @@ async def on_ready():
 @bot.command()
 async def poker(ctx, channel: nextcord.VoiceChannel):
     invite_link = await channel.create_activity_invite(activities.Activity.poker)
-    await ctx.send(invite_link.url)
+    await ctx.send(invite_link)
 
 
 @bot.command()
 async def betrayal(ctx, channel: nextcord.VoiceChannel):
     invite_link = await channel.create_activity_invite(activities.Activity.betrayal)
-    await ctx.send(invite_link.url)
+    await ctx.send(invite_link)
 
 
 bot.run("token here")
