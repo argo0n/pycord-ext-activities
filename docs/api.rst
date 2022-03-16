@@ -1,4 +1,4 @@
-.. currentmodule:: activities
+.. currentmodule:: nextcord.ext.activities
 
 API Reference
 ==============
@@ -13,4 +13,5 @@ Activities
 
 Methods
 --------
+
 
