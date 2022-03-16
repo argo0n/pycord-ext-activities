@@ -9,7 +9,7 @@ __author__ = "MaskDuck"
 __license__ = "MIT License"
 
 
-async def create_activity_invite_link(
+async def create_activity_invite(
     self: VoiceChannel,
     activity: Union[Activity, ActivityDevelopment],
     /,
@@ -81,4 +81,4 @@ async def create_activity_invite_link(
     return res
 
 
-VoiceChannel.create_activity_invite = create_activity_invite_link  # type: ignore
+VoiceChannel.create_activity_invite = create_activity_invite  # type: ignore
