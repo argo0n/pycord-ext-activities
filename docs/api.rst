@@ -3,15 +3,10 @@
 API Reference
 ==============
 
-Activities
------------
-.. autoenum:: Activity
-    :members:
-
-.. autoenum:: ActivityDevelopment
-    :members:
 
 Methods
 --------
+
+.. autofunction:: create_activity_invite
 
 
