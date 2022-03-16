@@ -11,7 +11,7 @@ Return the author of the wrapper. Usually ``MaskDuck``.
 
 activities.__license__
 =======================
-Return the license of the wrapper. Usually ``GNU General Public License Version 3.0"``
+Return the license of the wrapper. Usually ``MIT License``
 
 nextcord.VoiceChannel.create_activity_invite(activity, activity_id=None)
 ================================================================================
