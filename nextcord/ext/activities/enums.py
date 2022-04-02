@@ -26,13 +26,13 @@ class Activity(ActivityBase):
 
     youtube = 880218394199220334
     """Represent the Watch Together activity.
-    .. note::
-        This has an alias for legacy compability (:attr:`enums.Activity.watch_together`)."""
+        .. note::
+            This has an alias for legacy compability (:attr:`enums.Activity.watch_together`)."""
 
     doodle = 878067389634314250
     """Represent the Doodle Crew activity.
-    .. warning::
-        This activity is deprecated and you should use :attr:`enums.Activity.sketch` instead."""
+        .. warning::
+            This activity is deprecated and you should use :attr:`enums.Activity.sketch` instead."""
 
     sketch = 902271654783242291
     """Represent the Sketch Heads activity."""
@@ -42,8 +42,8 @@ class Activity(ActivityBase):
 
     blazing = 832025144389533716
     """Represent the Blazing 8s activity.
-    .. note::
-        This has an alias for legacy compability (:attr:`enums.Activity.ocho`)."""
+        .. note::
+            This has an alias for legacy compability (:attr:`enums.Activity.ocho`)."""
 
     putt_party = 945737671223947305
     """Represent the Putt Party activity."""
@@ -55,35 +55,35 @@ class Activity(ActivityBase):
 
     poker = 755827207812677713  # boost-locked
     """Represent the Poker Night activity.
-    .. note::
-        This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""
+        .. note::
+            This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""
 
     chess = 832012774040141894
     """Represent the Chess In The Park activity.
-    .. note::
-        This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""  # boost-locked
+        .. note::
+            This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""  # boost-locked
 
     checker = 832013003968348200  # boost-locked
     """Represent the Checkers in the park activity.
-    .. note::
-        This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""
+        .. note::
+            This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""
 
     spellcast = 852509694341283871  # boost-locked
     """Represent the Spellcase activity.
-    .. note::
-        1. This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature.
-        2. This has an alias (:attr:`enums.Activity.checkers`) for spelling stuff."""
+        .. note::
+            1. This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature.
+            2. This has an alias (:attr:`enums.Activity.checkers`) for spelling stuff."""
 
     letter_league = 879863686565621790  # boost-locked
     """Represent the Letter League activity.
-    .. note::
-        1. This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature.
-        2. This has an alias (:attr:`enums.Activity.letter_tile`) for legacy compability."""
+        .. note::
+            1. This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature.
+            2. This has an alias (:attr:`enums.Activity.letter_tile`) for legacy compability."""
 
     awkword = 879863881349087252  # boost-locked
     """Represent the Awkword activity.
-    .. note::
-        This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""
+        .. note::
+            This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""
 
     # aliases for legacy reasons
     letter_tile = letter_league  # boost-locked, now named letter_league
@@ -98,16 +98,16 @@ class ActivityDevelopment(ActivityBase):
 
     putt_party = 910224161476083792
     """Represent the Putt Party Development activity.
-    .. note::
-        This is an development version and may be unplayable."""
+        .. note::
+            This is an development version and may be unplayable."""
     sketch = 879864104980979792
     """Represent the Sketch Heads Development activity.
-    .. note::
-        This is an development version and may be unplayable."""
+        .. note::
+            This is an development version and may be unplayable."""
     doodle = 878067427668275241
     """Represent the Doodle Crew Development activity.
-    .. note::   
-        This is an development version and may be unplayable."""
+        .. note::   
+            This is an development version and may be unplayable."""
     youtube = 880218832743055411
     """Represent the Watch Together Development activity.
     .. note::   
@@ -115,13 +115,13 @@ class ActivityDevelopment(ActivityBase):
 
     PN = 763133495793942528
     """Represent the Poker Night Development activity.
-    .. note::   
-        This is an development version and may be unplayable."""
+        .. note::   
+            This is an development version and may be unplayable."""
     word_snacks = 879864010126786570
     """Represent the Word Snacks Development activity.
-    .. note::
-        This is an development version and may be unplayable."""
+        .. note::
+            This is an development version and may be unplayable."""
     decoder = 891001866073296967
     """Represent the Decoder Development activity.
-    .. note::
-        This is an development version and may be unplayable."""
+        .. note::
+            This is an development version and may be unplayable."""
