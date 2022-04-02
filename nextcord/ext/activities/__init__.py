@@ -1,100 +1,73 @@
-import nextcord
-from .enums import Activity
+from typing import Optional, Union
 
+from nextcord import InviteTarget, Invite, VoiceChannel
 
+from .enums import Activity, ActivityDevelopment
 
-__all__ = ("Activity")
-__version__ = "2022.03.14"
+__version__ = "2022.03.15"
 __author__ = "MaskDuck"
 __license__ = "MIT License"
 
 
-async def create_activity_invite_link(self, activity: Activity, activity_id: int = None) -> str:  # noqa: E501
+async def create_activity_invite(
+    self: VoiceChannel,
+    activity: Union[Activity, ActivityDevelopment],
+    /,
+    *,
+    activity_id: Optional[int] = None,
+    reason: Optional[str] = None,
+    max_age: int = 0,
+    max_uses: int = 0,
+    temporary: bool = False,
+    unique: bool = True,
+) -> Invite:
     """
-    Creates an invite link for the specified activity.
+    .. note::
+        
+        This should be called using `nextcord.VoiceChannel.create_activity_invite()`.
 
-    Parameters
-    -----------
-    activity
-        The activity to create an invite link for.
-        If the value is ``Activity.custom`` and you don't pass the ``activity_id`` parameter, this will lead to an exception.
-    activity_id
-        The ID of the activity to create an invite link for, if ``activity`` parameter is ``Activity.custom``.
-        If ``activity`` is not ``Activity.custom``, this parameter is ignored.
+    Creates an instant invite for the specified activity.
 
-    Returns
-    --------
-        The invite link to launch the specific activity.
+    You must have the :attr:`~nextcord.Permissions.create_instant_invite` permission to
+    do this.
 
-    Return type
-    ------------
-        :class:`str`
+    :param activity: The activity to create an invite link for. ``activity_id`` must be specified if this is :attr:`Activity.custom`.
+    :type activity: Union[Activity, ActivityDevelopment]
+    :param activity_id: The ID of the activity to create an invite link for. This can not be ``None`` if ``activity`` is of type ``Activity.custom``.
+    :type activity_id: Optional[int]
+    :param max_age: How long the invite should last in seconds. If it's 0 then the invite doesn't expire. Defaults to ``0``.
+    :type max_age: int
+    :param max_uses: How many times the invite can be used. If it's 0 then there are unlimited uses. Defaults to ``0``.
+    :type max_uses: int
+    :param temporary: Denotes that the invite grants temporary membership (i.e. they get kicked after they disconnect). Defaults to ``False``..
+    :type temporary: bool
+    :param unique: Indicates if a unique invite URL should be created. Defaults to True. If this is set to ``False`` then it will return a previously created invite.
+    :type unique: bool
+    :param reason: The reason the invite is being created. Shows up on the audit log.
+    :type reason: Optional[str]
+    :returns: The created invite.
+    :rtype: :class:`~nextcord.Invite`
+    :raise: :exc:`~nextcord.HTTPException` Invite creation failed.
     """
-
-    async def _create_normal_invite_link(activity_id: int):
-        return await self.create_invite(
-            target_type=nextcord.InviteTarget.embedded_application,
-            target_application_id=activity_id
-        )
-    
-    activity_type_to_activity = {
-        Activity.custom: activity_id,
-        Activity.poker: 755827207812677713,
-        Activity.betrayal: 773336526917861400,
-        Activity.fishington: 814288819477020702,
-        Activity.checker: 832013003968348200,
-        Activity.chess: 832012774040141894,
-        Activity.ocho: 832025144389533716,
-        Activity.blazing: 832025144389533716,
-        Activity.youtube: 880218394199220334,
-        Activity.doodle: 878067389634314250,
-        Activity.letter_tile: 879863686565621790,
-        Activity.letter_league: 879863686565621790,
-        Activity.word_snacks: 879863976006127627,
-        Activity.sketch: 902271654783242291,
-        Activity.spellcast: 852509694341283871,
-        Activity.awkword: 879863881349087252
-    }
-
-    return await _create_normal_invite_link(activity_type_to_activity.get(activity))
-    # older snippets, v2022.02.26
-    """
-    if activity == Activity.poker:
-        return await _create_normal_invite_link(755827207812677713)
-    elif activity == Activity.betrayal:
-        return await _create_normal_invite_link(773336526917861400)
-    elif activity == Activity.fishington:
-        return await _create_normal_invite_link(814288819477020702)
-    elif activity == Activity.chess:
-        return await _create_normal_invite_link(832012774040141894)
-    elif activity == Activity.checker:
-        return await _create_normal_invite_link(832013003968348200)
-    elif activity == Activity.ocho:
-        return await _create_normal_invite_link(832025144389533716)
-    elif activity == Activity.youtube:
-        return await _create_normal_invite_link(880218394199220334)
-    elif activity == Activity.doodle:
-        warnings.warn("Doodle Crew is an old activity, and will be removed in a future release.", DeprecationWarning)  # noqa: E501
-        return await _create_normal_invite_link(878067389634314250)
-    elif activity == Activity.letter_tile:
-        warnings.warn("letter_tile name is now deprecated, use letter_league instead.", DeprecationWarning)  # noqa: E501
-        return await _create_normal_invite_link(879863686565621790)
-    elif activity == Activity.letter_league:
-        return await _create_normal_invite_link(879863686565621790)
-    elif activity == Activity.word_snacks:
-        return await _create_normal_invite_link(879863976006127627)
-    elif activity == Activity.sketch:
-        return await _create_normal_invite_link(902271654783242291)
-    elif activity == Activity.spellcast:
-        return await _create_normal_invite_link(852509694341283871)
-    elif activity == Activity.awkword:
-        return await _create_normal_invite_link(879863881349087252)
-    elif activity == Activity.custom:
+    if activity is Activity.custom:
         if activity_id is None:
-            raise ValueError('if activity is Activity.custom then activity_id must be passed')  # noqa: E501
-            return
-        return await _create_normal_invite_link(activity_id)
-    """
+            raise ValueError("activity_id is required for Activity.custom")
+
+        activity_id = int(activity_id)
+    else:
+        activity_id = int(activity)
+
+    res = await self.create_invite(
+        reason=reason,
+        max_age=max_age,
+        max_uses=max_uses,
+        temporary=temporary,
+        unique=unique,
+        target_type=InviteTarget.embedded_application,
+        target_application_id=activity_id,
+    )
+
+    return res
 
 
-nextcord.VoiceChannel.create_activity_invite = create_activity_invite_link
+VoiceChannel.create_activity_invite = create_activity_invite  # type: ignore

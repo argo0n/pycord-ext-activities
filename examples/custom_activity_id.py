@@ -1,9 +1,8 @@
 # kinda useless since nextcord allow you to directly pass the id, but heck yeah.
 import nextcord
-from nextcord.ext import commands, activities
+from nextcord.ext import activities, commands
 
-intents = nextcord.Intents.default()
-bot = commands.Bot(command_prefix="$", intents=intents)
+bot = commands.Bot(command_prefix="$")
 
 
 @bot.event
@@ -13,9 +12,9 @@ async def on_ready():
 
 @bot.command()
 async def custom(ctx, channel: nextcord.VoiceChannel):
-    activity_id = 1234567888  # this is a fake one, put a real id there.
+    activity_id = 1234567890  # this is a fake one, put a real id there.
     invite_link = await channel.create_activity_invite(activities.Activity.custom, activity_id=activity_id)
-    await ctx.send(invite_link)
+    await ctx.send(invite_link.url)
 
 
-bot.run('token here')
+bot.run("token here")
