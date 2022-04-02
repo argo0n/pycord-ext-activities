@@ -10,6 +10,7 @@ class ActivityBase(Enum):
 
 
 class Activity(ActivityBase):
+    """These are activities can be playable."""
     # you can insert activity_id parameter while setting this as activities,
     # honestly very useless since nextcord already have target_application_id, but heck yeah
     custom = None
@@ -22,6 +23,7 @@ class Activity(ActivityBase):
     word_snacks = 879863976006127627
     blazing = 832025144389533716
     putt_party = 945737671223947305
+    land_io = 903769130790969345
 
     # Potential boost locked
     poker = 755827207812677713  # boost-locked
@@ -39,6 +41,7 @@ class Activity(ActivityBase):
 
 # https://gist.github.com/GeneralSadaf/42d91a2b6a93a7db7a39208f2d8b53ad#development-versions
 class ActivityDevelopment(ActivityBase):
+    """These are development versions of the activities. May not be playable."""
     putt_party = 910224161476083792
     sketch = 879864104980979792
     doodle = 878067427668275241
