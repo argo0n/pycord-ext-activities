@@ -4,7 +4,7 @@ from nextcord import InviteTarget, Invite, VoiceChannel
 
 from .enums import Activity, ActivityDevelopment
 
-__version__ = "2022.03.15"
+__version__ = "2022.04.02"
 __author__ = "MaskDuck"
 __license__ = "MIT License"
 
