@@ -41,7 +41,7 @@ class Activity(ActivityBase):
     blazing = 832025144389533716
     """Represent the Blazing 8s activity.
 
-    This has an alias for legacy compability (:attr:`enums.Activity.ocho`)."""
+    This has an alias for legacy compability (:attr:`Activity.ocho`)."""
 
     putt_party = 945737671223947305
     """Represent the Putt Party activity."""
@@ -53,33 +53,37 @@ class Activity(ActivityBase):
 
     poker = 755827207812677713  # boost-locked
     """Represent the Poker Night activity.
-    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""
+    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""
 
     chess = 832012774040141894
     """Represent the Chess In The Park activity.
-    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""  # boost-locked
+    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""  # boost-locked
 
     checker = 832013003968348200  # boost-locked
     """Represent the Checkers in the park activity.
-    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""
+    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""
 
     spellcast = 852509694341283871  # boost-locked
     """Represent the Spellcase activity.
-    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature, and has an alias (:attr:`enums.Activity.checkers`) for spelling stuff."""
+    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature, and has an alias (:attr:`Activity.checkers`) for spelling stuff."""
 
     letter_league = 879863686565621790  # boost-locked
     """Represent the Letter League activity.
-    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature and has an alias (:attr:`enums.Activity.letter_tile`) for legacy compability."""
+    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature and has an alias (:attr:`Activity.letter_tile`) for legacy compability."""
 
     awkword = 879863881349087252  # boost-locked
     """Represent the Awkword activity.
-    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the `HAD_EARLY_ACTIVITY_ACCESS` feature."""
+    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""
 
     # aliases for legacy reasons
     letter_tile = letter_league  # boost-locked, now named letter_league
+    """This is a shortcut for :attr:`Activity.letter_league`."""
     ocho = blazing  # boost-locked
+    """This is a shortcut for :attr:`Activity.blazing`."""
     watch_together = youtube
+    """This is a shortcut for :attr:`Activity.youtube`."""
     checkers = checker
+    """This is a shortcut for :attr:`Activity.checker`."""
 
 
 # https://gist.github.com/GeneralSadaf/42d91a2b6a93a7db7a39208f2d8b53ad#development-versions
