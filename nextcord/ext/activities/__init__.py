@@ -10,7 +10,7 @@ __license__ = "MIT License"
 
 
 async def create_activity_invite(
-    self: VoiceChannel,
+    self,
     activity: Union[Activity, ActivityDevelopment],
     /,
     *,
