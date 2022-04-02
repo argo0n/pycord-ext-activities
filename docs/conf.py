@@ -9,16 +9,16 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.autosectionlabel",
-    "sphinx_book_theme"
+    "sphinx_book_theme",
 ]
 
 language = "en"
 
 autodoc_member_order = "bysource"
 
-html_theme = 'sphinx_book_theme'
+html_theme = "sphinx_book_theme"
 
 intersphinx_mapping = {
     "py": ("https://docs.python.org/3", None),
-    "nextcord": ("https://nextcord.readthedocs.io/en/latest/", None)
+    "nextcord": ("https://nextcord.readthedocs.io/en/latest/", None),
 }

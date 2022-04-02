@@ -23,7 +23,7 @@ async def create_activity_invite(
 ) -> Invite:
     """
     .. note::
-        
+
         This should be called using ``nextcord.VoiceChannel.create_activity_invite()``.
 
     Creates an instant invite for the specified activity.
