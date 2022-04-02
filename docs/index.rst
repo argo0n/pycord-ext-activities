@@ -1,3 +1,19 @@
-Hi there <o/
-============
-Right now idk what should I write here. Maybe check out the `API docs <https://nextcord-ext-activities.readthedocs.io/en/latest/api.html>`_?
+.. currentmodule:: nextcord.ext.activities
+
+API Reference
+==============
+
+
+Methods
+--------
+
+.. autofunction:: create_activity_invite
+
+Activities
+----------
+
+.. autoclass:: Activity
+    :members:
+
+.. autoclass:: ActivityDevelopment
+    :members:
