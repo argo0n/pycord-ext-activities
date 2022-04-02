@@ -66,17 +66,17 @@ class Activity(ActivityBase):
     checker = 832013003968348200  # boost-locked
     """Represent the Checkers in the park activity.
 
-    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""
+    This is boost-locked and has an alias (:attr:`Activity.checkers`) for spelling stuff. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""
 
     spellcast = 852509694341283871  # boost-locked
     """Represent the Spellcase activity.
 
-    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature and has an alias (:attr:`Activity.checkers`) for spelling stuff."""
+    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""
 
     letter_league = 879863686565621790  # boost-locked
     """Represent the Letter League activity.
 
-    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature and has an alias (:attr:`Activity.letter_tile`) for legacy compability."""
+    This is boost-locked and has an alias (:attr:`Activity.letter_tile`) for legacy compability. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""
 
     awkword = 879863881349087252  # boost-locked
     """Represent the Awkword activity.
