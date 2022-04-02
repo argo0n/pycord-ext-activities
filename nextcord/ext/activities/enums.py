@@ -26,10 +26,12 @@ class Activity(ActivityBase):
 
     youtube = 880218394199220334
     """Represent the Watch Together activity.
+
     This has an alias for legacy compability (:attr:`enums.Activity.watch_together`)."""
 
     doodle = 878067389634314250
     """Represent the Doodle Crew activity.
+
     This activity is deprecated and you should use :attr:`enums.Activity.sketch` instead."""
 
     sketch = 902271654783242291
@@ -65,7 +67,7 @@ class Activity(ActivityBase):
 
     spellcast = 852509694341283871  # boost-locked
     """Represent the Spellcase activity.
-    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature, and has an alias (:attr:`Activity.checkers`) for spelling stuff."""
+    This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature and has an alias (:attr:`Activity.checkers`) for spelling stuff."""
 
     letter_league = 879863686565621790  # boost-locked
     """Represent the Letter League activity.
@@ -92,23 +94,30 @@ class ActivityDevelopment(ActivityBase):
 
     putt_party = 910224161476083792
     """Represent the Putt Party Development activity.
+
     This is an development version and may be unplayable."""
     sketch = 879864104980979792
     """Represent the Sketch Heads Development activity.
+
     This is an development version and may be unplayable."""
     doodle = 878067427668275241
     """Represent the Doodle Crew Development activity. 
+
     This is an development version and may be unplayable."""
     youtube = 880218832743055411
     """Represent the Watch Together Development activity.
+
     This is an development version and may be unplayable."""
 
     PN = 763133495793942528
     """Represent the Poker Night Development activity.
+
     This is an development version and may be unplayable."""
     word_snacks = 879864010126786570
     """Represent the Word Snacks Development activity.
+
     This is an development version and may be unplayable."""
     decoder = 891001866073296967
     """Represent the Decoder Development activity.
+
     This is an development version and may be unplayable."""
