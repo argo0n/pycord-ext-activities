@@ -27,12 +27,12 @@ class Activity(ActivityBase):
     youtube = 880218394199220334
     """Represent the Watch Together activity.
 
-    This has an alias for legacy compability (:attr:`enums.Activity.watch_together`)."""
+    This has an alias for legacy compability (:attr:`Activity.watch_together`)."""
 
     doodle = 878067389634314250
     """Represent the Doodle Crew activity.
 
-    This activity is deprecated and you should use :attr:`enums.Activity.sketch` instead."""
+    This activity is deprecated and you should use :attr:`Activity.sketch` instead."""
 
     sketch = 902271654783242291
     """Represent the Sketch Heads activity."""
@@ -55,26 +55,32 @@ class Activity(ActivityBase):
 
     poker = 755827207812677713  # boost-locked
     """Represent the Poker Night activity.
+
     This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""
 
     chess = 832012774040141894
     """Represent the Chess In The Park activity.
+
     This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""  # boost-locked
 
     checker = 832013003968348200  # boost-locked
     """Represent the Checkers in the park activity.
+
     This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""
 
     spellcast = 852509694341283871  # boost-locked
     """Represent the Spellcase activity.
+
     This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature and has an alias (:attr:`Activity.checkers`) for spelling stuff."""
 
     letter_league = 879863686565621790  # boost-locked
     """Represent the Letter League activity.
+
     This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature and has an alias (:attr:`Activity.letter_tile`) for legacy compability."""
 
     awkword = 879863881349087252  # boost-locked
     """Represent the Awkword activity.
+
     This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""
 
     # aliases for legacy reasons
