@@ -8,15 +8,14 @@ autosectionlabel_prefix_document = True
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
-    "sphinx.ext.autosectionlabel",
-    "sphinx_book_theme",
+    "sphinx.ext.autosectionlabel"
 ]
 
 language = "en"
 
 autodoc_member_order = "bysource"
 
-html_theme = "sphinx_book_theme"
+html_theme = "furo"
 
 intersphinx_mapping = {
     "py": ("https://docs.python.org/3", None),
