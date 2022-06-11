@@ -84,7 +84,7 @@ class Activity(ActivityBase):
     This is boost-locked. To start this activity, you need to have tier 1 boosting or have the ``HAD_EARLY_ACTIVITY_ACCESS`` feature."""
     
     bobble = 947957217959759964
-    """Represent the Bobble League activity."
+    """Represent the Bobble League activity."""
 
     # aliases for legacy reasons
     letter_tile = letter_league  # boost-locked, now named letter_league
