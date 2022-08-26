@@ -8,11 +8,11 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 packages = [
-    "pycord.ext.activities",
+    "discord.ext.activities",
 ]
 setup(
     name="pycord-ext-activities",
-    version="2022.06.11",
+    version="2022.08.26",
     description="An Pycord extension that helps you to launch activities on Discord.",  # noqa: E501
     long_description=open("README.md").read(),
     url="",

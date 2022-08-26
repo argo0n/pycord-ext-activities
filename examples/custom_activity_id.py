@@ -1,6 +1,6 @@
-# kinda useless since nextcord allow you to directly pass the id, but heck yeah.
-import nextcord
-from nextcord.ext import activities, commands
+# kinda useless since pycord allow you to directly pass the id, but heck yeah.
+import discord
+from discord.ext import activities, commands
 
 bot = commands.Bot(command_prefix="$")
 
@@ -11,7 +11,7 @@ async def on_ready():
 
 
 @bot.command()
-async def custom(ctx, channel: nextcord.VoiceChannel):
+async def custom(ctx, channel: discord.VoiceChannel):
     activity_id = 1234567890  # this is a fake one, put a real id there.
     invite_link = await channel.create_activity_invite(
         activities.Activity.custom, activity_id=activity_id
