@@ -70,4 +70,4 @@ async def create_activity_invite(
     return res
 
 
-VoiceChannel.create_activity_invite = create_activity_invite  # type: ignore
+VoiceChannel.ext_create_activity_invite = create_activity_invite  # type: ignore
