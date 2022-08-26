@@ -1,4 +1,4 @@
-.. currentmodule:: nextcord.ext.activities
+.. currentmodule:: discord.ext.activities
 
 API Reference
 ==============
