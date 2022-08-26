@@ -9,7 +9,7 @@ __author__ = "MaskDuck"
 __license__ = "MIT License"
 
 
-async def create_activity_invite(
+async def ext_create_activity_invite(
     self,
     activity: Union[Activity, ActivityDevelopment],
     /,
@@ -70,4 +70,4 @@ async def create_activity_invite(
     return res
 
 
-VoiceChannel.ext_create_activity_invite = create_activity_invite  # type: ignore
+VoiceChannel.ext_create_activity_invite = ext_create_activity_invite  # type: ignore
