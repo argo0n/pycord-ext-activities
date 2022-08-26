@@ -1,6 +1,6 @@
 from typing import Optional, Union
 
-from nextcord import InviteTarget, Invite, VoiceChannel
+from discord import InviteTarget, Invite, VoiceChannel
 
 from .enums import Activity, ActivityDevelopment
 
@@ -24,11 +24,11 @@ async def create_activity_invite(
     """
     .. note::
 
-        This should be called using ``nextcord.VoiceChannel.create_activity_invite()``.
+        This should be called using ``discord.VoiceChannel.create_activity_invite()``.
 
     Creates an instant invite for the specified activity.
 
-    You must have the :attr:`~nextcord.Permissions.create_instant_invite` permission to
+    You must have the :attr:`~discord.Permissions.create_instant_invite` permission to
     do this.
 
     :param activity: The activity to create an invite link for. ``activity_id`` must be specified if this is :attr:`Activity.custom`.
@@ -46,8 +46,8 @@ async def create_activity_invite(
     :param reason: The reason the invite is being created. Shows up on the audit log.
     :type reason: Optional[str]
     :returns: The created invite.
-    :rtype: :class:`~nextcord.Invite`
-    :raise: :exc:`~nextcord.HTTPException` Invite creation failed.
+    :rtype: :class:`~discordcord.Invite`
+    :raise: :exc:`~discord.HTTPException` Invite creation failed.
     """
     if activity is Activity.custom:
         if activity_id is None:
